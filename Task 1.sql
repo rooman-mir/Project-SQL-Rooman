@@ -147,10 +147,10 @@ SELECT b.AUTHOR, COUNT(*) as total_borrows
 FROM Books b
 JOIN BorrowingRecords br ON b.BOOK_ID = br.BOOK_ID
 GROUP BY b.AUTHOR
-HAVING COUNT(*) >= 10;
+HAVING COUNT(*) >= 10; -- no books have been borrowed 10 times
 
 /* Query d: Identify members who have never borrowed a book */
 SELECT m.NAME
 FROM Members m
 LEFT JOIN BorrowingRecords br ON m.MEMBER_ID = br.MEMBER_ID
-WHERE br.BORROW_ID IS NULL;
+WHERE br.BORROW_ID IS NULL; -- No rows returned - all members have borrowed at least once.
