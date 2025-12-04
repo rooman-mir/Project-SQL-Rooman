@@ -108,4 +108,4 @@ LIMIT 1;
 SELECT e1.NAME, e1.SALARY
 FROM employees e1
 JOIN employees e2 ON e1.SALARY = e2.SALARY AND e1.EMPLOYEE_ID != e2.EMPLOYEE_ID
-ORDER BY e1.SALARY;
+ORDER BY e1.SALARY; -- 0 rows as no employees have same salaries
